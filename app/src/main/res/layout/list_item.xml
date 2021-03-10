@@ -1,16 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content"
+    android:padding="16dp"
+    android:layout_marginTop="16dp"
+    android:background="#FFCECE">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        >
+
+
 
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="227dp"
-        android:layout_height="150dp"
-        app:srcCompat="@drawable/pancakes"
 
+        android:id="@+id/imageView1"
+        android:layout_width="172dp"
+        android:layout_height="147dp"
+        android:background="#fff"
+        android:layout_marginRight="40dp"
+         />
+
+    <TextView
+        android:id="@+id/tv1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="tasty"
+        android:textStyle="bold"
+        android:layout_toRightOf = "@+id/imageView1"
         />
-</RelativeLayout>
+<TextView
+    android:id="@+id/tv2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="tasty"
+    android:textStyle="bold"
+    android:layout_below="@+id/tv1"
+    android:layout_toRightOf = "@+id/imageView1"/>
+        
+
+
+</RelativeLayout></RelativeLayout>

@@ -3,12 +3,21 @@ package com.example.tastyui
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
-class CustomAdapter(): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>(){
+class CustomAdapter(val img:Array<Int>,
+                    val text: Array<String>, val desc:Array<String>
+                    ): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>(){
 
     class CustomViewHolder(itemView: View):RecyclerView.ViewHolder(itemView){
 
+        fun bindValue(image:Int, txt:String,desc:String){
+            itemView.findViewById<ImageView>(R.id.imageView1).setImageResource(image)
+            itemView.findViewById<TextView>(R.id.tv1).text = txt
+            itemView.findViewById<TextView>(R.id.tv2).text = desc
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -17,11 +26,12 @@ class CustomAdapter(): RecyclerView.Adapter<CustomAdapter.CustomViewHolder>(){
     }
 
     override fun getItemCount(): Int {
-       return 5
+       return img.size
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
 
+        holder.bindValue(img[position],text[position],desc[position])
     }
 
 }
